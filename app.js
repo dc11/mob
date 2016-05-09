@@ -23,6 +23,9 @@ var db = mongoose.connect(connection_string);
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
+Gesture = require('./models/Gesture').Gesture;
+Message = require('./models/Message').Message;
+Place = require('./models/Place').Place;
 
 var app = express();
 
