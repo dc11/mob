@@ -5,7 +5,7 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var session = require('express-session');
-var async = require('async');
+// var async = require('async');
 var mongo = require('mongodb');
 var mongoose = require('mongoose');
 
