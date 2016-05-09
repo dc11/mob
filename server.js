@@ -1,4 +1,5 @@
 var express = require('express');
+var app = express();
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
@@ -27,7 +28,7 @@ Gesture = require('./models/Gesture').Gesture;
 Message = require('./models/Message').Message;
 Place = require('./models/Place').Place;
 
-var app = express();
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -78,7 +79,7 @@ app.use(function(err, req, res, next) {
 var port = process.env.OPENSHIFT_NODEJS_PORT;
 var ip = process.env.OPENSHIFT_NODEJS_IP;
 
-app.listen(process.env.OPENSHIFT_NODEJS_PORT || 3000,
-           process.env.OPENSHIFT_NODEJS_IP);
+app.listen(port || 3000,
+           ip);
 
 module.exports = app;
