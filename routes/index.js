@@ -112,7 +112,5 @@ router.get('/message', function (req, res) {
 	})
 });
 
-module.exports = router;
-
 
 module.exports = router;
