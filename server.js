@@ -20,7 +20,10 @@ if (process.env.OPENSHIFT_MONGODB_DB_PASSWORD) {
         process.env.OPENSHIFT_MONGODB_DB_PORT + '/backend';
 }
 
-var db = mongoose.connect(connection_string);
+var db = mongoose.connect("mongodb://" + connection_string);
+
+var port = process.env.OPENSHIFT_NODEJS_PORT;
+var ip = process.env.OPENSHIFT_NODEJS_IP;
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
@@ -76,8 +79,7 @@ app.use(function(err, req, res, next) {
   });
 });
 
-var port = process.env.OPENSHIFT_NODEJS_PORT;
-var ip = process.env.OPENSHIFT_NODEJS_IP;
+
 
 app.listen(port || 3000,
            ip);
